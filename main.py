@@ -280,6 +280,8 @@ def calculate_nutrition_score(food_row, target_calories):
     
     return total_score
 
+# main.py (sama seperti sebelumnya, tapi tambahkan di akhir:)
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run(app, host="0.0.0.0", port=port)
